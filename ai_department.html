@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department of Artificial Intelligence | SVPP Autonomous College of Engineering</title>
+  <meta name="description"
+    content="Official Department of Artificial Intelligence Portal at Sri Venkatesa Perumal College of Engineering & Technology (SVPP Autonomous), Puttur. Access circulars, student & faculty attendance, R26 syllabus copies, timetables, mid examination marks, and semester results.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="college_logo.png">
+  <link rel="apple-touch-icon" href="college_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="student-mode">
+
+  <!-- =========================================================================
+       INSTITUTIONAL HEADER
+       ========================================================================= -->
+  <header class="inst-header">
+    <div class="inst-topbar">
+      <div class="inst-topbar-left">
+        <span><span class="topbar-badge">AUTONOMOUS</span> Affiliated to JNTUA, Ananthapuramu &bull; Approved by
+          AICTE</span>
+        <span><strong>Counselling Code:</strong> SVPP</span>
+        <span><strong>Call:</strong> 9390505457 / 9390505452</span>
+      </div>
+      <div class="inst-topbar-right">
+        <span style="font-size: 0.78rem; color: #cbd5e1;">Portal Access:</span>
+        <div class="auth-status-container" id="authStatusContainer">
+          <div class="role-switcher" id="roleSwitcherGuest">
+            <span class="view-mode-pill">Student (View Only)</span>
+            <button class="role-btn btn-faculty-login" id="roleFacultyBtn" type="button">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              Faculty / HOD Login
+            </button>
+          </div>
+          <div class="auth-logged-in-bar" id="authLoggedInBar" style="display: none;">
+            <span class="auth-user-badge" id="authUserBadge">
+              <span class="auth-live-dot"></span>
+              <span id="authUserName">Dr. V. Janardhan Babu</span> (<strong id="authUserRole">HOD</strong>)
+            </span>
+            <button class="btn-logout" id="authLogoutBtn" type="button" title="Sign out to Student View-Only Mode">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Banner Container -->
+    <div class="inst-banner-container">
+      <div class="vector-banner" id="vectorBanner">
+        <div class="college-crest-group">
+          <div class="college-logo-wrap" title="Sri Venkatesa Perumal College of Engineering &amp; Technology">
+            <img src="college_logo.png" alt="Sri Venkatesa Perumal College of Engineering &amp; Technology (SVPP Autonomous) Official Emblem" class="college-crest-img">
+          </div>
+          <div class="college-logo-wrap ai-crest-mini-wrap" title="Department of Artificial Intelligence">
+            <img src="ai_department_logo.png" alt="Department of AI Official Emblem" class="college-crest-img">
+          </div>
+          <div class="college-title-block">
+            <div class="college-code-badge">SVPP (AUTONOMOUS) &bull; DEPARTMENT OF ARTIFICIAL INTELLIGENCE</div>
+            <div class="college-name-full">SRI VENKATESA PERUMAL COLLEGE OF ENGINEERING &amp; TECHNOLOGY | PUTTUR</div>
+            <div class="college-affil">
+              COUNSELLING CODE: SVPP <span>&bull;</span> CALL: 9390505457/52 <span>&bull;</span> NAAC 'A' &bull; NBA
+              ACCREDITED
+            </div>
+          </div>
+        </div>
+        <div class="college-silver-badge">
+          <div class="silver-number">25</div>
+          <div class="silver-text">Years of<br>Academic<br>Excellence</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="college-nav-bar" aria-label="College Quick Links">
+      <a href="index.html" class="college-nav-btn">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+          </path>
+        </svg>
+        SVPP Home
+      </a>
+      <a href="http://117.250.204.212/bos/R26-syllabus" target="_blank" class="college-nav-btn">R26 Syllabus</a>
+      <a href="http://117.250.204.212/bos" target="_blank" class="college-nav-btn">BoS 2026</a>
+      <a href="http://117.250.204.212/labs" target="_blank" class="college-nav-btn">Softwares</a>
+      <a href="http://117.250.204.212/one" target="_blank" class="college-nav-btn">Eazy Compiler</a>
+      <a href="ai_department.html" class="college-nav-btn btn-ai-highlight">
+        <img src="ai_department_logo.png" alt="AI Dept Emblem" class="nav-ai-logo-icon">
+        <span class="ai-pulse-dot"></span>
+        Dept of Artificial Intelligence
+      </a>
+      <a href="#results" onclick="document.querySelector('[data-tab=\'results\']').click()"
+        class="college-nav-btn btn-orange">ExamPortal &amp; Results</a>
+    </nav>
+  </header>
+
+  <!-- News / Circulars Ticker Bar -->
+  <div class="news-ticker-wrap">
+    <div class="ticker-label">
+      <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+      </svg>
+      Latest Circulars
+    </div>
+    <div class="ticker-content">
+      <div class="ticker-marquee">
+        📢 <strong>B.Tech AI Mid-I Examinations:</strong> Schedule released for A.Y. 2026-27 commencing from 14th Oct
+        &bull; 📚 <strong>R26 Regulation:</strong> 1st Board of Studies (BoS) Approved Syllabus Copy now available
+        &bull; 📊 <strong>Attendance Notice:</strong> September 2026 monthly attendance posted. Students &lt;75% report
+        to HOD &bull; 🏆 <strong>Hackathon:</strong> Registration open for State-Level Generative AI Hackathon with INR
+        50,000 cash prizes!
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       DEPARTMENT HERO STRIP
+       ========================================================================= -->
+  <section class="ai-dept-hero-strip">
+    <div class="ai-dept-hero-inner">
+      <div class="ai-dept-hero-brand">
+        <div class="ai-dept-emblem-wrap">
+          <img src="ai_department_logo.png" alt="Department of AI Official Emblem" class="ai-dept-emblem-img">
+        </div>
+        <div class="ai-dept-title-group">
+          <div class="ai-meta-pills">
+            <span class="ai-pill"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                </path>
+              </svg> NBA Accredited Programme</span>
+            <span class="ai-pill">R26 Autonomous Regulation</span>
+            <span class="ai-pill">JNTUA Affiliated</span>
+          </div>
+          <h1>Department of <span>Artificial Intelligence</span></h1>
+          <p class="ai-dept-tagline">
+            Empowering future AI engineers, machine learning researchers, and data scientists with cutting-edge GPU labs,
+            modern R26 autonomous curriculum, and real-time student-teacher academic portals.
+          </p>
+        </div>
+      </div>
+
+      <div class="ai-hero-metrics">
+        <div class="hero-metric-item">
+          <div class="hero-metric-val">127</div>
+          <div class="hero-metric-label">III Year V Sem Batch</div>
+        </div>
+        <div class="hero-metric-item">
+          <div class="hero-metric-val">12</div>
+          <div class="hero-metric-label">High-End GPU Nodes</div>
+        </div>
+        <div class="hero-metric-item">
+          <div class="hero-metric-val">100%</div>
+          <div class="hero-metric-label">Autonomous R23/R26</div>
+        </div>
+        <div class="hero-metric-item">
+          <div class="hero-metric-val">9.45</div>
+          <div class="hero-metric-label">Top Class SGPA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PORTAL PRIMARY TABS BAR
+       ========================================================================= -->
+  <nav class="dept-nav-tabs-container" aria-label="Department Modules">
+    <div class="dept-nav-tabs">
+      <button class="nav-tab-item active" data-tab="overview" onclick="switchDepartmentTab('overview')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+          </path>
+        </svg>
+        Overview &amp; Labs
+      </button>
+
+      <button class="nav-tab-item" data-tab="circulars" onclick="switchDepartmentTab('circulars')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+          </path>
+        </svg>
+        Circulars &amp; Notices
+        <span class="tab-badge">5 New</span>
+      </button>
+
+      <button class="nav-tab-item" data-tab="attendance" onclick="switchDepartmentTab('attendance')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
+          </path>
+        </svg>
+        Attendance Portal
+      </button>
+
+      <button class="nav-tab-item" data-tab="roster" onclick="switchDepartmentTab('roster')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+          </path>
+        </svg>
+        III Year V Sem Students
+        <span class="tab-badge" style="background:#f59e0b; color:#002244;">127 Batch</span>
+      </button>
+
+      <button class="nav-tab-item" data-tab="syllabus" onclick="switchDepartmentTab('syllabus')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+          </path>
+        </svg>
+        Syllabus Copy (R26)
+      </button>
+
+      <button class="nav-tab-item" data-tab="timetables" onclick="switchDepartmentTab('timetables')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        Time Tables
+      </button>
+
+      <button class="nav-tab-item" data-tab="marks" onclick="switchDepartmentTab('marks')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+          </path>
+        </svg>
+        Mid Marks &amp; Internals
+      </button>
+
+      <button class="nav-tab-item" data-tab="results" onclick="switchDepartmentTab('results')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+          </path>
+        </svg>
+        Semester Results Memo
+      </button>
+
+      <button class="nav-tab-item" data-tab="faculty-desk" onclick="switchDepartmentTab('faculty-desk')" type="button">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path
+            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+          </path>
+        </svg>
+        Faculty Desk
+      </button>
+    </div>
+  </nav>
+
+  <!-- Immediate Inline Navigation Switcher (Instant Response Guarantee) -->
+  <script>
+    function switchDepartmentTab(tabId) {
+      if (!tabId) return;
+      var tabs = document.querySelectorAll('.nav-tab-item');
+      var panels = document.querySelectorAll('.tab-content-panel');
+      for (var i = 0; i < tabs.length; i++) {
+        var t = tabs[i];
+        if (t.getAttribute('data-tab') === tabId) {
+          t.classList.add('active');
+        } else {
+          t.classList.remove('active');
+        }
+      }
+      for (var j = 0; j < panels.length; j++) {
+        var p = panels[j];
+        if (p.id === 'panel-' + tabId) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      }
+      var activePanel = document.getElementById('panel-' + tabId);
+      if (activePanel) {
+        var navBar = document.querySelector('.dept-nav-tabs-container');
+        var offset = navBar ? navBar.offsetHeight : 65;
+        var top = activePanel.getBoundingClientRect().top + (window.pageYOffset || window.scrollY || 0) - offset - 15;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
+    }
+  </script>
+
+  <!-- =========================================================================
+       MAIN PORTAL CONTAINER & PANELS
+       ========================================================================= -->
+  <main class="portal-container">
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 1: OVERVIEW & DASHBOARD
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel active" id="panel-overview">
+
+      <!-- Feature Jump Cards Grid -->
+      <div class="dashboard-grid">
+        <div class="feature-portal-card" data-jump-tab="circulars" onclick="switchDepartmentTab('circulars')">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-rose">📢</div>
+            <span class="circ-badge badge-urgent">Active</span>
+          </div>
+          <h3>Department Circulars</h3>
+          <p>Read official academic notifications, examination schedules, workshop invitations, and circulars issued by
+            HOD &amp; College Authorities.</p>
+          <div class="card-action-link">View All Notices &rarr;</div>
+        </div>
+
+        <div class="feature-portal-card" data-jump-tab="attendance" onclick="switchDepartmentTab('attendance')">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-emerald">📊</div>
+            <span class="circ-badge badge-academic">Real-Time</span>
+          </div>
+          <h3>Attendance Portal</h3>
+          <p>Instant student attendance lookup by hall ticket number. Check subject-wise percentage, monthly calendar,
+            and eligibility indicators.</p>
+          <div class="card-action-link">Check Attendance &rarr;</div>
+        </div>
+
+        <div class="feature-portal-card" data-jump-tab="roster" onclick="switchDepartmentTab('roster')" style="border: 2px solid #38bdf8;">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-blue">👥</div>
+            <span class="circ-badge" style="background:#0284c7; color:#ffffff;">127 Students</span>
+          </div>
+          <h3>III Year (V Sem) Students</h3>
+          <p>Official 2026-27 class roster for III B.Tech Artificial Intelligence. Section A &amp; B directory, live attendance status, and 1-click exam results.</p>
+          <div class="card-action-link" style="color:#0284c7; font-weight:700;">Explore Class Roster &rarr;</div>
+        </div>
+
+        <div class="feature-portal-card" data-jump-tab="syllabus" onclick="switchDepartmentTab('syllabus')">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-gold">📚</div>
+            <span class="circ-badge" style="background:#fef3c7; color:#b45309;">R26 Autonomy</span>
+          </div>
+          <h3>Syllabus Copy (R26)</h3>
+          <p>Board of Studies approved curriculum for B.Tech AI. Explore unit breakdowns, LTPC credits, course outcomes,
+            and download syllabus copies.</p>
+          <div class="card-action-link">Browse Curriculum &rarr;</div>
+        </div>
+
+        <div class="feature-portal-card" data-jump-tab="timetables" onclick="switchDepartmentTab('timetables')">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-blue">🗓️</div>
+            <span class="circ-badge badge-academic">A.Y. 2026-27</span>
+          </div>
+          <h3>Time Tables</h3>
+          <p>Class schedules for AI Department (Years I to IV), lab batch allocations, faculty teaching hours, and
+            Mid-Exam timetable sheets.</p>
+          <div class="card-action-link">View Weekly Timetable &rarr;</div>
+        </div>
+
+        <div class="feature-portal-card" data-jump-tab="marks" onclick="switchDepartmentTab('marks')">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-amber">📝</div>
+            <span class="circ-badge badge-exam">Mid-I &amp; Mid-II</span>
+          </div>
+          <h3>Mid Marks &amp; Internals</h3>
+          <p>Check descriptive test scores, online quiz performance, assignments, and scaled internal assessments with
+            visual subject progress gauges.</p>
+          <div class="card-action-link">Lookup Mid Marks &rarr;</div>
+        </div>
+
+        <div class="feature-portal-card" data-jump-tab="results" onclick="switchDepartmentTab('results')">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-purple">🎓</div>
+            <span class="circ-badge" style="background:#e0f2fe; color:#0369a1;">Certified Memo</span>
+          </div>
+          <h3>Semester Results Portal</h3>
+          <p>Autonomous semester grade memo with SGPA &amp; CGPA calculator, grade points, credits earned, and printable
+            official grade card layout.</p>
+          <div class="card-action-link">Generate Grade Card &rarr;</div>
+        </div>
+      </div>
+
+      <!-- Advanced AI Lab Showcase -->
+      <div class="glass-card" style="margin-bottom: 30px; padding: 0; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+          <div style="padding: 36px 32px; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <img src="ai_department_logo.png" alt="AI Department Emblem" style="width: 32px; height: 32px; object-fit: contain; border-radius: 6px; background: #001a35; padding: 2px; border: 1px solid #38bdf8;">
+              <span class="circ-badge badge-academic" style="width: fit-content; margin-bottom: 0;">Infrastructure Highlight</span>
+            </div>
+            <h2
+              style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--navy-dark); margin-bottom: 12px;">
+              Advanced AI, Machine Learning &amp; Robotics Research Center
+            </h2>
+            <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px;">
+              The Department of Artificial Intelligence at SVPP Autonomous is equipped with dedicated NVIDIA GPU
+              servers, Edge AI kits (Jetson Orin, Raspberry Pi 5), high-precision robotic arms, and 1 Gbps dedicated
+              academic internet backbone to give students practical exposure in Large Language Models, Deep Vision, and
+              Automated Systems.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <span class="roll-chip" style="font-size: 0.8rem; padding: 6px 14px;">⚡ NVIDIA RTX Workstations</span>
+              <span class="roll-chip" style="font-size: 0.8rem; padding: 6px 14px;">🤖 Robotic Manipulators</span>
+              <span class="roll-chip" style="font-size: 0.8rem; padding: 6px 14px;">☁️ Hybrid Cloud ML Lab</span>
+            </div>
+          </div>
+          <div style="min-height: 320px; position: relative;">
+            <img src="ai_hero.jpg"
+              onerror="this.onerror=null; this.src='file:///C:/Users/91912/.gemini/antigravity-ide/brain/36419e73-798d-491d-aa56-cb687778367f/svpp_ai_hero_1790830608222.jpg';"
+              alt="SVPP AI Computing Lab" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </div>
+      </div>
+
+      <!-- HOD Message & Student Innovation -->
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; margin-bottom: 30px;">
+        <div class="glass-card">
+          <div style="display: flex; gap: 18px; align-items: flex-start; margin-bottom: 16px;">
+            <div
+              style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-navy), #0284c7); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; font-weight: 700; flex-shrink: 0;">
+              KR
+            </div>
+            <div>
+              <h3 style="font-size: 1.25rem; color: var(--navy-dark); font-weight: 700;">HOD's Message &bull; Dept. of
+                Artificial Intelligence</h3>
+              <p style="color: var(--brand-blue); font-weight: 600; font-size: 0.86rem;">Dr. V. Janardhan Babu, Ph.D.
+                &bull;
+                Professor &amp; Head of Department</p>
+            </div>
+          </div>
+          <p style="color: #334155; font-size: 0.92rem; line-height: 1.7;">
+            "Welcome to the Department of Artificial Intelligence at SVPP College of Engineering &amp; Technology
+            (Autonomous). Our mission is to blend robust theoretical foundations in algorithms, linear algebra, and data
+            engineering with cutting-edge hands-on practice in Generative AI, Robotics, and Computer Vision. Under the
+            autonomous R26 regulation, our curriculum is reviewed by premier university professors and industry leaders
+            from Tata Electronics, TCS, and Google, ensuring our graduates are Day-1 industry ready."
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <h3
+            style="font-size: 1.15rem; color: var(--navy-dark); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+            <svg width="20" height="20" fill="currentColor" style="color: #d97706;" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+              </path>
+            </svg>
+            Student Innovation Spotlight
+          </h3>
+          <img src="ai_event.jpg"
+            onerror="this.onerror=null; this.src='file:///C:/Users/91912/.gemini/antigravity-ide/brain/36419e73-798d-491d-aa56-cb687778367f/svpp_ai_event_1790830669753.jpg';"
+            alt="SVPP AI Project Award"
+            style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
+          <p style="font-size: 0.85rem; color: #475569;">
+            SVPP AI Department students won the Best Research Project award for their Autonomous Crop Disease Diagnosis
+            model utilizing deep convolutional networks.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 2: CIRCULARS & NOTICES
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel" id="panel-circulars">
+      <div class="panel-header-bar">
+        <div class="panel-title-wrap">
+          <h2>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+              </path>
+            </svg>
+            Department Circulars &amp; Academic Notices
+          </h2>
+          <p>Official notices for students and teachers of CSE (Artificial Intelligence)</p>
+        </div>
+
+        <div class="panel-controls">
+          <div class="filter-btn-group">
+            <button class="filter-chip active" data-category="all" type="button">All Notices</button>
+            <button class="filter-chip" data-category="exams" type="button">Exams</button>
+            <button class="filter-chip" data-category="academic" type="button">Academic</button>
+            <button class="filter-chip" data-category="attendance" type="button">Attendance</button>
+            <button class="filter-chip" data-category="faculty" type="button">Faculty</button>
+          </div>
+
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="circularSearchInput" placeholder="Search notices, ref no...">
+          </div>
+
+          <button class="btn-primary faculty-only" onclick="document.querySelector('[data-tab=\'faculty-desk\']').click()">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 4v16m8-8H4"></path>
+            </svg>
+            Post Circular (Faculty)
+          </button>
+        </div>
+      </div>
+
+      <!-- Circulars List -->
+      <div class="circulars-list" id="circularsListContainer">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 3: ATTENDANCE PORTAL
+         ----------------------------------------------------------------------- -->
+    <!-- -----------------------------------------------------------------------
+         PANEL 3: ATTENDANCE PORTAL (PROFESSIONAL INSTITUTIONAL ERP ARCHITECTURE)
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel" id="panel-attendance">
+      <div class="panel-header-bar" style="margin-bottom: 18px;">
+        <div class="panel-title-wrap">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <span class="circ-badge" style="background: #003366; color: #ffffff; font-size: 0.76rem; font-weight: 800; padding: 2px 10px;">AUTONOMOUS ERP</span>
+            <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">JNTUA Affiliation Code: 43 &bull; AICTE Approved</span>
+          </div>
+          <h2 style="font-size: 1.45rem; color: var(--navy-dark); font-weight: 800; margin: 0; display: flex; align-items: center; gap: 10px;">
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+            Department Attendance ERP &bull; Real-Time Lecture Ledger
+          </h2>
+          <p style="margin: 4px 0 0 0; color: #475569; font-size: 0.88rem;">
+            Official biometric and daily lecture reconciliation system with interactive Microsoft Excel register workbook and HOD autonomous compliance desk.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <span style="font-size: 0.78rem; color: #64748b;">Autonomous Regulation:</span>
+          <span class="circ-badge badge-academic" style="font-size: 0.78rem;">R23 / R26 Norms (75% Cutoff)</span>
+        </div>
+      </div>
+
+      <!-- MASTER ERP ATTENDANCE TABS -->
+      <div class="erp-master-tabs">
+        <button type="button" class="erp-master-tab-btn active" id="erpTabStudentLedgerBtn">
+          🎓 Student Attendance Ledger &amp; Academic Status
+        </button>
+        <button type="button" class="erp-master-tab-btn faculty-only" id="erpTabExcelWorkbookBtn">
+          📊 Faculty Live Excel Register (Workbook Model)
+        </button>
+        <button type="button" class="erp-master-tab-btn faculty-only" id="erpTabHodDeskBtn">
+          🛡️ HOD Departmental Gazette Desk
+          <span id="erpHodPendingBadge" style="background:#dc2626; color:#ffffff; font-size:0.7rem; font-weight:800; border-radius:10px; padding:1px 7px; margin-left:4px;">0</span>
+        </button>
+      </div>
+
+      <!-- VIEW 1: STUDENT OVERALL ATTENDANCE LEDGER -->
+      <div id="erpStudentViewContainer">
+        <!-- Search & Fast Student Selector Strip -->
+        <div class="erp-search-strip">
+          <form id="attendanceLookupForm" class="erp-search-input-wrap">
+            <div class="erp-search-field">
+              <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <input type="text" id="attendanceRollInput" placeholder="Enter 10-Digit Roll No (e.g. 24G01A4324, 24G01A4301) or Student Name..." value="24G01A4324" list="allStudentsDatalist" required>
+            </div>
+            <button type="submit" class="btn-primary" style="padding: 10px 22px; font-weight: 700;">
+              🔍 Fetch Real-Time Ledger
+            </button>
+          </form>
+
+          <!-- Quick Select Student Chips -->
+          <div style="margin-top: 14px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: #475569; text-transform: uppercase;">
+              Quick Cohort Roster:
+            </span>
+            <div class="roll-suggestions" style="margin: 0;">
+              <span class="roll-chip" data-roll="24G01A4324">24G01A4324 &bull; Chakala Karthik</span>
+              <span class="roll-chip" data-roll="24G01A4301">24G01A4301 &bull; Navya Sree</span>
+              <span class="roll-chip" data-roll="24G01A4302">24G01A4302 &bull; Meerakumari</span>
+              <span class="roll-chip" data-roll="24G01A4310">24G01A4310 &bull; B Hasini</span>
+              <span class="roll-chip" data-roll="24G01A4350">24G01A4350 &bull; Jagadesh R</span>
+              <span class="roll-chip" data-roll="24G01A43A0">24G01A43A0 &bull; Phaneendra Reddy</span>
+              <span class="roll-chip" data-roll="25G05A4302">25G05A4302 &bull; Sandeep (LE)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Overall Student Attendance Card & Ledger (Injected by app.js) -->
+        <div id="attendanceResultDisplay">
+          <!-- Injected dynamically by renderStudentAttendance() in app.js -->
+        </div>
+      </div>
+
+      <!-- VIEW 2: FACULTY & HOD INTERACTIVE EXCEL WORKBOOK MODEL -->
+      <div id="erpExcelWorkbookViewContainer" style="display: none;">
+        <!-- Injected dynamically by renderExcelWorkbookApp() in app.js -->
+      </div>
+
+      <!-- VIEW 3: HOD EXECUTIVE GAZETTE & APPROVAL DESK -->
+      <div id="erpHodDeskViewContainer" style="display: none;">
+        <!-- Injected dynamically by renderHodExecutiveDesk() in app.js -->
+      </div>
+    </div>
+
+    <!-- DAY-BY-DAY SUBJECT INSPECTION MODAL -->
+    <div class="day-modal-backdrop" id="dayLogModalBackdrop">
+      <div class="day-modal-content">
+        <div style="background: linear-gradient(135deg, #002244, #003366); color: #ffffff; padding: 16px 22px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #38bdf8;">
+          <div>
+            <h4 id="dayModalSubjectTitle" style="margin: 0; font-size: 1.15rem; font-weight: 800;">
+              Subject Day-by-Day Lecture Attendance
+            </h4>
+            <span id="dayModalStudentSub" style="font-size: 0.78rem; color: #7dd3fc;">
+              Official Attendance Register &bull; Biometric Verified
+            </span>
+          </div>
+          <button type="button" id="closeDayModalBtn" style="background: none; border: none; color: #ffffff; font-size: 1.5rem; cursor: pointer; line-height: 1;">&times;</button>
+        </div>
+        <div id="dayModalBodyContent" style="padding: 20px; overflow-y: auto; max-height: 60vh;">
+          <!-- Injected dynamically -->
+        </div>
+        <div style="background: #f8fafc; padding: 12px 20px; border-top: 1px solid #cbd5e1; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #64748b;">
+          <span>Official seal: SVPP/AUTONOMOUS/COE/ATTENDANCE</span>
+          <button type="button" class="btn-secondary" id="closeDayModalFooterBtn" style="padding: 5px 16px;">Close Log</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL: III YEAR V SEMESTER MASTER STUDENT DIRECTORY (127 BATCH)
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel" id="panel-roster">
+      <div class="panel-header-bar">
+        <div class="panel-title-wrap">
+          <h2>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+              </path>
+            </svg>
+            III B.Tech V Semester &bull; Master Student Directory &amp; Roster
+          </h2>
+          <p>Official Department of Artificial Intelligence Student Cohort &bull; 127 Enrolled Candidates (Section A &amp; Section B)</p>
+        </div>
+        <div class="panel-controls" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn-secondary" id="exportRosterCsvBtn" type="button">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Export Roster CSV
+          </button>
+          <button class="btn-primary" onclick="window.print()" type="button">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            Print Master Roster
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Stats Summary Cards -->
+      <div class="roster-kpi-grid">
+        <div class="roster-kpi-card">
+          <div class="kpi-val" id="kpiTotalStudents">127</div>
+          <div class="kpi-lbl">Total Strength</div>
+          <div class="kpi-sub">Sec A: 61 | Sec B: 66</div>
+        </div>
+        <div class="roster-kpi-card">
+          <div class="kpi-val" style="color: #0284c7;" id="kpiAvgAttendance">83.8%</div>
+          <div class="kpi-lbl">Class Avg Attendance</div>
+          <div class="kpi-sub">Current V Semester</div>
+        </div>
+        <div class="roster-kpi-card">
+          <div class="kpi-val" style="color: #10b981;" id="kpiSafeCount">108</div>
+          <div class="kpi-lbl">Eligible for Exams</div>
+          <div class="kpi-sub">&ge; 75% Safe Zone</div>
+        </div>
+        <div class="roster-kpi-card">
+          <div class="kpi-val" style="color: #f59e0b;" id="kpiCondonationCount">14</div>
+          <div class="kpi-lbl">Condonation Allowed</div>
+          <div class="kpi-sub">65% - 74% Attendance</div>
+        </div>
+        <div class="roster-kpi-card">
+          <div class="kpi-val" style="color: #ef4444;" id="kpiShortageCount">5</div>
+          <div class="kpi-lbl">Detention Risk</div>
+          <div class="kpi-sub">&lt; 65% Shortage</div>
+        </div>
+      </div>
+
+      <!-- Filter & Search Controls Bar -->
+      <div class="glass-card" style="margin-bottom: 20px;">
+        <div class="roster-filter-toolbar">
+          <div class="search-input-wrap">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <input type="text" id="masterRosterSearch" class="form-control" placeholder="Search 127 students by roll no or name (e.g. 4301, Meerakumari, Sandeep)...">
+          </div>
+          <div class="section-filter-pills" id="rosterSectionPills">
+            <button class="filter-pill active" data-section="all" type="button">All Sections (127)</button>
+            <button class="filter-pill" data-section="Section A" type="button">Section A (61)</button>
+            <button class="filter-pill" data-section="Section B" type="button">Section B (66)</button>
+          </div>
+          <div class="status-filter-pills" id="rosterStatusPills">
+            <button class="filter-pill active" data-status="all" type="button">All Status</button>
+            <button class="filter-pill" data-status="Safe" type="button">Safe (&ge;75%)</button>
+            <button class="filter-pill" data-status="Condonation" type="button">Condonation</button>
+            <button class="filter-pill" data-status="Shortage" type="button">Shortage</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Table Display -->
+      <div class="glass-card" style="padding: 0; overflow: hidden;">
+        <div class="roster-table-responsive">
+          <table class="master-roster-table" id="masterRosterTable">
+            <thead>
+              <tr>
+                <th style="width: 50px;">#</th>
+                <th style="width: 140px;">Roll Number</th>
+                <th>Student Full Name</th>
+                <th style="width: 100px; text-align: center;">Section</th>
+                <th style="width: 190px;">Faculty Mentor</th>
+                <th style="width: 180px;">Attendance Status</th>
+                <th style="width: 80px; text-align: center;">SGPA</th>
+                <th style="width: 80px; text-align: center;">CGPA</th>
+                <th style="width: 260px; text-align: center;">Instant Direct Actions</th>
+              </tr>
+            </thead>
+            <tbody id="masterRosterTbody">
+              <!-- Dynamically populated by app.js -->
+            </tbody>
+          </table>
+        </div>
+        <div id="rosterEmptyMsg" style="display: none; padding: 40px; text-align: center; color: #64748b;">
+          No students match the selected filter or search query.
+        </div>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 4: SYLLABUS COPY (R26 AUTONOMOUS)
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel" id="panel-syllabus">
+      <div class="panel-header-bar">
+        <div class="panel-title-wrap">
+          <h2>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+              </path>
+            </svg>
+            R26 Autonomous Syllabus Copy &bull; Department of AI
+          </h2>
+          <p>Official Board of Studies (BoS) approved course structure, unit breakdowns, credits, and references</p>
+        </div>
+
+        <div class="panel-controls">
+          <a href="http://117.250.204.212/bos/R26-syllabus" target="_blank" class="btn-primary">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Official BoS Document Link
+          </a>
+        </div>
+      </div>
+
+      <div class="syllabus-semester-tabs">
+        <button class="sem-pill-btn active" data-sem="sem3" type="button">II Year I Semester (Sem 3)</button>
+        <button class="sem-pill-btn" data-sem="sem4" type="button">II Year II Semester (Sem 4)</button>
+        <button class="sem-pill-btn" data-sem="sem5" type="button">III Year I Semester (Sem 5)</button>
+        <button class="sem-pill-btn" data-sem="sem6" type="button">III Year II Semester (Sem 6)</button>
+        <button class="sem-pill-btn" data-sem="sem7" type="button">IV Year (Final Year)</button>
+      </div>
+
+      <!-- Syllabus Courses Cards Accordion Container -->
+      <div id="syllabusCoursesContainer">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 5: TIME TABLES
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel" id="panel-timetables">
+      <div class="panel-header-bar">
+        <div class="panel-title-wrap">
+          <h2>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Time Tables &bull; Classes, Faculty &amp; Mid Exams
+          </h2>
+          <p>Department of Artificial Intelligence &bull; Academic Year 2026-27 &bull; SVPP Autonomous</p>
+        </div>
+
+        <div class="panel-controls">
+          <button class="btn-primary" onclick="window.print()">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z">
+              </path>
+            </svg>
+            Print Timetable (PDF)
+          </button>
+        </div>
+      </div>
+
+      <div class="timetable-subtabs">
+        <button class="sem-pill-btn tt-subtab-btn active" data-tt-view="class" type="button">Weekly Class
+          Timetable</button>
+        <button class="sem-pill-btn tt-subtab-btn" data-tt-view="exams" type="button">Mid-I Exam Schedule (Oct
+          2026)</button>
+        <button class="sem-pill-btn tt-subtab-btn" data-tt-view="faculty" type="button">Faculty Teaching Load</button>
+      </div>
+
+      <!-- View 1: Weekly Class Timetable -->
+      <div id="classTtWrapper">
+        <!-- Class Selector Strip -->
+        <div class="tt-class-selector-strip">
+          <div class="tt-selector-label">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+            Select B.Tech Year &amp; Section (Odd Semester 2026-27):
+          </div>
+          <div class="timetable-class-tabs" id="timetableClassTabs">
+            <button class="tt-class-btn active" data-class-id="ii-a" type="button">
+              <span class="tt-room-pill">LH 203</span>
+              <span class="tt-class-name">II B.Tech &bull; Sec A</span>
+              <span class="tt-reg-sub">R23-B25 &bull; 7 Periods</span>
+            </button>
+            <button class="tt-class-btn" data-class-id="ii-b" type="button">
+              <span class="tt-room-pill">LH 202</span>
+              <span class="tt-class-name">II B.Tech &bull; Sec B</span>
+              <span class="tt-reg-sub">R23-B25 &bull; 7 Periods</span>
+            </button>
+            <button class="tt-class-btn" data-class-id="iii-a" type="button">
+              <span class="tt-room-pill">LH 308A</span>
+              <span class="tt-class-name">III B.Tech &bull; Sec A</span>
+              <span class="tt-reg-sub">R23-B24 &bull; 7 Periods</span>
+            </button>
+            <button class="tt-class-btn" data-class-id="iii-b" type="button">
+              <span class="tt-room-pill">LH 308B</span>
+              <span class="tt-class-name">III B.Tech &bull; Sec B</span>
+              <span class="tt-reg-sub">R23-B24 &bull; 7 Periods</span>
+            </button>
+            <button class="tt-class-btn" data-class-id="iv" type="button">
+              <span class="tt-room-pill">LH 310</span>
+              <span class="tt-class-name">IV B.Tech &bull; Final Year</span>
+              <span class="tt-reg-sub">R23-B23 &bull; 4 Periods + Projects</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Toolbar: Search filter & Quick stats -->
+        <div class="tt-toolbar-row">
+          <div class="tt-search-box">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <input type="text" id="ttSearchInput" placeholder="Quick filter by subject (e.g., AI, Python, NLP) or teacher name..." class="form-control tt-search-input">
+          </div>
+          <div class="tt-stats-pill-group" id="ttStatsPills">
+            <!-- Injected dynamically by app.js -->
+          </div>
+        </div>
+
+        <!-- Dynamic Timetable Content (Official Banner, Grid, and Faculty/Subject Reference Table) -->
+        <div id="classTimetableDynamicContainer">
+          <!-- Injected dynamically by app.js -->
+        </div>
+      </div>
+
+      <!-- View 2: Mid-I Exam Schedule -->
+      <div id="examTtWrapper" style="display: none;">
+        <div class="timetable-container">
+          <table class="timetable-grid-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Day</th>
+                <th>Session &amp; Time</th>
+                <th>Subject Code</th>
+                <th>Subject Title</th>
+              </tr>
+            </thead>
+            <tbody id="examTimetableBody">
+              <!-- Injected by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- View 3: Faculty Teaching Load -->
+      <div id="facultyTtWrapper" style="display: none;">
+        <div class="glass-card" style="margin-bottom: 16px;">
+          <label class="form-label" for="facultyScheduleSelect">Select Faculty Member:</label>
+          <select class="form-control" id="facultyScheduleSelect" style="max-width: 480px; margin-top: 6px;">
+            <option value="Dr. V. Janardhan Babu">Dr. V. Janardhan Babu (Professor &amp; HOD - AI)</option>
+            <option value="Mrs. Saigeetha">Mrs. Saigeetha (DMGT)</option>
+            <option value="Mrs. V.P. Rohini">Mrs. V.P. Rohini (UHV / Management Science)</option>
+            <option value="Mrs. N. Sridevi">Mrs. N. Sridevi (OOPJ / OSSP / Internships)</option>
+            <option value="Ms. H. Nazeema">Ms. H. Nazeema (ADSA / ADSA Lab)</option>
+            <option value="Mr. P. Gopichand">Mr. P. Gopichand (ADSA / ADSA Lab)</option>
+            <option value="Mrs. K. Hemavathi">Mrs. K. Hemavathi (Python Programming / PP Lab)</option>
+            <option value="Mr. Dr. P. Vinod Kumar">Mr. Dr. P. Vinod Kumar (Environmental Science)</option>
+            <option value="Mr. H. Mohammed">Mr. H. Mohammed (NLP / Deep Learning / FSD-II / Tinkering)</option>
+            <option value="Mrs. Revathi">Mrs. Revathi (OSSP / AI &amp; SP Lab)</option>
+            <option value="Mr. K. Purushotham">Mr. K. Purushotham (CVIP / CV &amp; NLP Lab)</option>
+            <option value="Dr. S. Venkata Kiran">Dr. S. Venkata Kiran (CVIP / CV &amp; NLP Lab)</option>
+            <option value="Mrs. Jansi">Mrs. Jansi (Quantum Technologies - Sec B)</option>
+            <option value="Mrs. Bhavani">Mrs. Bhavani (Quantum Technologies - Sec A)</option>
+            <option value="Dr. Anil">Dr. Anil (English for Competitive Examinations)</option>
+            <option value="Ms. R.R.S Spandana">Ms. R.R.S Spandana (Generative AI)</option>
+            <option value="Ms. D.V.S Charita">Ms. D.V.S Charita (AI in Cyber Security)</option>
+            <option value="Mr. A. Dhanasekhar Reddy">Mr. A. Dhanasekhar Reddy (AI for Smart Cities &amp; IoT)</option>
+            <option value="Dr. R. Devarajulu Reddy">Dr. R. Devarajulu Reddy (Employability Skills)</option>
+            <option value="Mr. Y. Maheswar Reddy">Mr. Y. Maheswar Reddy (Transducers &amp; Sensors)</option>
+            <option value="Mr. K. Lakshman">Mr. K. Lakshman (Prompt Engineering)</option>
+          </select>
+        </div>
+        <div id="facultyScheduleResult"></div>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 6: MARKS & MID EXAMINATIONS
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel" id="panel-marks">
+      <div class="panel-header-bar">
+        <div class="panel-title-wrap">
+          <h2>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+              </path>
+            </svg>
+            Mid Examination Marks &amp; Internal Assessment
+          </h2>
+          <p>Descriptive (30M), Online Quiz (10M), and Continuous Assignment (5M) scaled internal score</p>
+        </div>
+        <div class="panel-controls faculty-only" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn-primary" id="openMarksEntryBtn" type="button">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+            Faculty Marks Update Console
+          </button>
+        </div>
+      </div>
+
+      <div class="glass-card" style="margin-bottom: 24px;">
+        <form id="marksLookupForm" style="display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap;">
+          <div class="form-group" style="flex: 1; min-width: 280px;">
+            <label class="form-label" for="marksRollInput">Enter Student Hall Ticket / Roll Number:</label>
+            <input type="text" id="marksRollInput" class="form-control" value="24G01A4301" placeholder="e.g. 24G01A4301 or Student Name"
+              list="allStudentsDatalist" required>
+          </div>
+          <button type="submit" class="btn-primary" style="height: 42px;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            Fetch Mid Marks
+          </button>
+        </form>
+
+        <div style="margin-top: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="font-size: 0.78rem; font-weight: 700; color: #64748b;">Quick Student Lookup (III Year V Sem):</span>
+          <span class="roll-chip marks-roll-chip" data-roll="24G01A4301">24G01A4301 (Navya Sree)</span>
+          <span class="roll-chip marks-roll-chip" data-roll="24G01A4302">24G01A4302 (Meerakumari)</span>
+          <span class="roll-chip marks-roll-chip" data-roll="24G01A4310">24G01A4310 (B Hasini)</span>
+          <span class="roll-chip marks-roll-chip" data-roll="24G01A4350">24G01A4350 (Jagadesh R)</span>
+          <span class="roll-chip marks-roll-chip" data-roll="24G01A43A0">24G01A43A0 (Phaneendra Reddy)</span>
+          <span class="roll-chip marks-roll-chip" data-roll="25G05A4302">25G05A4302 (Sandeep - LE)</span>
+        </div>
+      </div>
+
+      <div id="marksDisplayContainer">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 7: SEMESTER RESULTS MEMO
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel" id="panel-results">
+      <div class="panel-header-bar">
+        <div class="panel-title-wrap">
+          <h2>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+              </path>
+            </svg>
+            SVPP Autonomous Semester Results Portal
+          </h2>
+          <p>Official provisional grade cards, SGPA/CGPA evaluation, and certified verification</p>
+        </div>
+        <div class="panel-controls" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn-primary" id="openAdminGazetteBtn" type="button" style="background: #0284c7; border-color: #0284c7;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            📑 Official PDF Gazette Registry
+          </button>
+          <button class="btn-primary" id="openResultsEntryBtn" type="button" style="background: #059669; border-color: #059669;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+            ✏️ Update &amp; Edit Semester Marks
+          </button>
+        </div>
+      </div>
+
+      <div class="glass-card" style="margin-bottom: 24px;">
+        <form id="resultsLookupForm" style="display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap;">
+          <div class="form-group" style="flex: 1; min-width: 280px;">
+            <label class="form-label" for="resultsRollInput">Enter Hall Ticket Number:</label>
+            <input type="text" id="resultsRollInput" class="form-control" value="24G01A4324"
+              placeholder="e.g. 24G01A4324 or 24G01A4333" list="allStudentsDatalist" required>
+          </div>
+          <button type="submit" class="btn-primary" style="height: 42px;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Get Result Memo
+          </button>
+        </form>
+
+        <div style="margin-top: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="font-size: 0.78rem; font-weight: 700; color: #64748b;">Quick Student Lookup (AI &amp; AIML):</span>
+          <span class="roll-chip results-roll-chip" data-roll="24G01A4324">24G01A4324 (Karthik - AI All Clear)</span>
+          <span class="roll-chip results-roll-chip" data-roll="24G01A4333">24G01A4333 (Girish - AI Multi-Sem Backlogs)</span>
+          <span class="roll-chip results-roll-chip" data-roll="25G01A4301">25G01A4301 (A B Suresh - AI Sem I &amp; II)</span>
+          <span class="roll-chip results-roll-chip" data-roll="25G01A4201">25G01A4201 (A Anitha - AIML All Clear)</span>
+          <span class="roll-chip results-roll-chip" data-roll="25G01A4206">25G01A4206 (A Rohith - AIML Multi Backlogs)</span>
+          <span class="roll-chip results-roll-chip" data-roll="24G01A4201">24G01A4201 (A Gopi - AIML Sem III &amp; IV)</span>
+          <span class="roll-chip results-roll-chip" data-roll="23G01A4301">23G01A4301 (A K Hemanath - AI All Sems)</span>
+          <span class="roll-chip results-roll-chip" data-roll="23G01A4201">23G01A4201 (Amudala Naga Deepak - AIML All Sems)</span>
+          <span class="roll-chip results-roll-chip" data-roll="24G01A4375">24G01A4375 (M Jaswanth Reddy - Cleared Backlogs)</span>
+        </div>
+      </div>
+
+      <div id="resultsMemoDisplay">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 8: FACULTY DESK
+         ----------------------------------------------------------------------- -->
+    <div class="tab-content-panel" id="panel-faculty-desk">
+      <div class="panel-header-bar">
+        <div class="panel-title-wrap">
+          <h2>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+              </path>
+            </svg>
+            Teacher &amp; Faculty Administration Desk
+          </h2>
+          <p>Post department circulars, manage attendance, review low attendance rosters, and update teaching notes</p>
+        </div>
+      </div>
+
+      <!-- Locked State (Visible in Student View-Only Mode) -->
+      <div id="facultyDeskLockedView" class="glass-card" style="text-align: center; padding: 48px 24px; max-width: 680px; margin: 30px auto;">
+        <div style="width: 80px; height: 80px; border-radius: 50%; background: #fef2f2; border: 2px solid #fecaca; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 18px; color: #dc2626;">
+          🔒
+        </div>
+        <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--navy-dark); margin-bottom: 10px;">
+          Faculty &amp; HOD Administration Desk Restricted
+        </h2>
+        <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; max-width: 520px; margin-left: auto; margin-right: auto;">
+          This desk contains faculty administrative tools including department circular publishing, daily attendance marking, and internal marks updates. Students have view-only access.
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button type="button" class="btn-primary" id="lockedViewLoginBtn" style="font-size: 1rem; padding: 12px 28px;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            Login with Faculty / HOD Credentials
+          </button>
+          <button type="button" class="btn-outline" onclick="document.querySelector('[data-tab=\'overview\']').click()">
+            Return to Student Overview
+          </button>
+        </div>
+      </div>
+
+      <!-- Unlocked State (Visible only when authenticated as Faculty / HOD) -->
+      <div id="facultyDeskUnlockedView" style="display: none;">
+        <!-- Super Admin Access & Approval Console Container -->
+        <div id="adminApprovalConsoleContainer" style="display: none; margin-bottom: 24px;"></div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <!-- Post Circular Box -->
+          <div class="glass-card">
+            <h3 style="font-size: 1.15rem; color: var(--navy-dark); font-weight: 700; margin-bottom: 14px;">
+              📢 Post New Department Circular
+            </h3>
+            <form id="facultyPostNoticeForm" style="display: flex; flex-direction: column; gap: 14px;">
+              <div class="form-group">
+                <label class="form-label" for="noticeTitleInput">Circular / Notice Headline:</label>
+                <input type="text" id="noticeTitleInput" class="form-control"
+                  placeholder="e.g. AI Lab Viva Schedule for Sem 3" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="noticeCategorySelect">Category:</label>
+                <select class="form-control" id="noticeCategorySelect">
+                  <option value="academic">Academic Notification</option>
+                  <option value="exams">Examination Notice</option>
+                  <option value="attendance">Attendance Alert</option>
+                  <option value="faculty">Faculty Meeting</option>
+                  <option value="events">Workshops &amp; Events</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="noticeDescInput">Circular Detailed Message:</label>
+                <textarea id="noticeDescInput" class="form-control" rows="4"
+                  placeholder="Enter the official text for students and staff..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary" style="justify-content: center;">
+                Publish Circular to Portal
+              </button>
+            </form>
+          </div>
+
+          <!-- Quick Faculty Shortcuts & Shortage Alert -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="glass-card">
+              <h3 style="font-size: 1.15rem; color: var(--navy-dark); font-weight: 700; margin-bottom: 12px;">
+                ⚠️ Attendance Shortage Monitoring
+              </h3>
+              <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 12px;">
+                Students with attendance below 75% for September 2026:
+              </p>
+              <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 12px;">
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: #991b1b; margin-bottom: 6px;">
+                  <span>24G01A4333 - Chitturu Girish</span>
+                  <span>68.8% (Condonation)</span>
+                </div>
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: #991b1b;">
+                  <span>24G01A4328 - Challa Hemanth Kumar</span>
+                  <span>64.2% (Shortage Risk)</span>
+                </div>
+              </div>
+              <button class="btn-secondary" style="margin-top: 14px; width: 100%; justify-content: center;"
+                onclick="document.querySelector('[data-tab=\'attendance\']').click()">
+                Open Daily Attendance Marker &rarr;
+              </button>
+            </div>
+
+            <div class="glass-card">
+              <h3 style="font-size: 1.15rem; color: var(--navy-dark); font-weight: 700; margin-bottom: 12px;">
+                👨‍🏫 Department Faculty List
+              </h3>
+              <ul style="font-size: 0.85rem; color: #334155; line-height: 1.8; list-style: none;">
+                <li>&bull; <strong>Dr. V. Janardhan Babu, Ph.D.</strong> &mdash; Professor &amp; HOD (Deep Learning, NLP)</li>
+                <li>&bull; <strong>Prof. S. Priya, M.Tech, (Ph.D.)</strong> &mdash; Assoc. Prof (Computer Vision)</li>
+                <li>&bull; <strong>Dr. M. Varma, Ph.D.</strong> &mdash; Assoc. Prof (Foundations of AI)</li>
+                <li>&bull; <strong>Prof. R. Haritha, M.Tech</strong> &mdash; Asst. Prof (Intelligent Data Processing)</li>
+                <li>&bull; <strong>Prof. P. Suresh Kumar, M.Tech</strong> &mdash; Asst. Prof (Computer Architecture)</li>
+                <li>&bull; <strong>Prof. T. Divya, M.Tech</strong> &mdash; Asst. Prof (AI App Development)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       CIRCULAR NOTICE READER MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="circularReaderModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="circularModalHeading">Official Circular Details</h3>
+        <button class="modal-close-btn" type="button">&times;</button>
+      </div>
+      <div class="modal-body" id="circularModalBody">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FACULTY & HOD SECURE LOGIN MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="facultyLoginModal">
+    <div class="modal-window" style="max-width: 520px;">
+      <div class="modal-header" style="background: linear-gradient(135deg, #002244 0%, #003366 100%); border-bottom: 2px solid #38bdf8;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="ai_department_logo.png" alt="AI Emblem" style="width: 36px; height: 36px; object-fit: contain; border-radius: 6px; background: #001a35; padding: 2px; border: 1px solid #38bdf8;">
+          <div>
+            <h3 style="margin: 0; font-size: 1.15rem; color: #ffffff;">Faculty &amp; HOD Authentication</h3>
+            <span style="font-size: 0.76rem; color: #7dd3fc; font-weight: 600;">SVPP Autonomous &bull; Dept of Artificial Intelligence</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" type="button" id="closeLoginModalBtn">&times;</button>
+      </div>
+
+      <div class="modal-body" style="padding: 24px;">
+        <!-- Purpose Banner -->
+        <div class="login-notice-banner" id="loginNoticeBanner" style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 12px 14px; margin-bottom: 18px; font-size: 0.84rem; color: #0369a1; display: flex; align-items: flex-start; gap: 10px;">
+          <span style="font-size: 1.2rem; line-height: 1;">🔐</span>
+          <div>
+            <strong>Restricted Access:</strong> Students have view-only access. Enter valid Faculty or HOD credentials to enable editing of student marks, attendance, and circulars.
+          </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div class="login-error-alert" id="loginErrorAlert" style="display: none; background: #fef2f2; border: 1.5px solid #ef4444; color: #b91c1c; padding: 10px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px;">
+          <span style="margin-right: 6px;">❌</span> <span id="loginErrorMsg">Invalid username or password. Please try again.</span>
+        </div>
+
+        <form id="facultyLoginForm">
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label class="form-label" for="loginRoleSelect" style="font-weight: 700;">Select Administrative Role:</label>
+            <select class="form-control" id="loginRoleSelect" style="font-weight: 600;">
+              <option value="HOD">Head of Department (HOD) - Full Admin &amp; Marks Rights</option>
+              <option value="Faculty">Assistant Professor / Faculty Member - AI Department</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label class="form-label" for="loginUsername" style="font-weight: 700;">Username / Staff ID:</label>
+            <input type="text" id="loginUsername" class="form-control" placeholder="Enter username (e.g. hod or faculty)" autocomplete="username" required>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" for="loginPassword" style="font-weight: 700; margin-bottom: 0;">Password:</label>
+              <button type="button" id="togglePasswordBtn" style="background: none; border: none; font-size: 0.78rem; color: var(--brand-blue); cursor: pointer; text-decoration: underline;">
+                Show Password
+              </button>
+            </div>
+            <input type="password" id="loginPassword" class="form-control" placeholder="Enter password" autocomplete="current-password" required>
+          </div>
+
+          <!-- Quick Test Credentials Box -->
+          <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; margin-bottom: 20px;">
+            <div style="font-size: 0.74rem; text-transform: uppercase; font-weight: 800; color: #64748b; letter-spacing: 0.05em; margin-bottom: 8px;">
+              🔑 Institutional Demo Accounts (Click to Fill):
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
+              <button type="button" class="btn-demo-creds" id="fillAdminCredsBtn" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 8px; font-size: 0.76rem; text-align: left; cursor: pointer; transition: all 0.15s;">
+                <div style="font-weight: 700; color: #0284c7;">Super Admin</div>
+                <div style="font-family: var(--font-mono); color: #64748b; font-size: 0.68rem; overflow: hidden; text-overflow: ellipsis;">admin@svpp.edu.in</div>
+              </button>
+              <button type="button" class="btn-demo-creds" id="fillHodCredsBtn" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 8px; font-size: 0.76rem; text-align: left; cursor: pointer; transition: all 0.15s;">
+                <div style="font-weight: 700; color: var(--navy-dark);">HOD Login</div>
+                <div style="font-family: var(--font-mono); color: #64748b; font-size: 0.68rem; overflow: hidden; text-overflow: ellipsis;">hod.ai@svpp.edu.in</div>
+              </button>
+              <button type="button" class="btn-demo-creds" id="fillFacultyCredsBtn" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 8px; font-size: 0.76rem; text-align: left; cursor: pointer; transition: all 0.15s;">
+                <div style="font-weight: 700; color: var(--navy-dark);">Faculty Login</div>
+                <div style="font-family: var(--font-mono); color: #64748b; font-size: 0.68rem; overflow: hidden; text-overflow: ellipsis;">faculty.ai@svpp.edu.in</div>
+              </button>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; justify-content: flex-end;">
+            <button type="button" class="btn-outline" id="cancelLoginBtn">Cancel</button>
+            <button type="submit" class="btn-primary" style="background: linear-gradient(135deg, #0284c7, #004080); display: flex; align-items: center; gap: 8px; font-weight: 700;">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+              Login &amp; Enable Editing
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FACULTY MARKS & SEMESTER GRADES UPDATE MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="marksUpdateModal">
+    <div class="modal-window modal-lg">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.4rem;">📝</span>
+          <div>
+            <h3 id="marksModalHeading" style="margin: 0; line-height: 1.2;">Faculty Marks &amp; Assessment Console</h3>
+            <span style="font-size: 0.78rem; opacity: 0.85;">III B.Tech V Semester (Autonomous R23/R26 Curriculum)</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" type="button" id="closeMarksModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 20px 24px;">
+        <!-- Student Selector & Details Box -->
+        <div class="student-selector-box">
+          <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 280px;">
+            <label for="modalStudentSelect" style="font-weight: 700; font-size: 0.85rem; color: var(--navy-dark); white-space: nowrap;">
+              Select Student:
+            </label>
+            <select id="modalStudentSelect" class="form-control" style="flex: 1; font-weight: 600; font-size: 0.88rem;"></select>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span class="badge" id="modalStudentSectionBadge" style="background:#e0f2fe; color:#0369a1; font-weight:700;">Section A</span>
+            <span class="badge" id="modalStudentBatchBadge" style="background:#f1f5f9; color:#475569; font-weight:600;">2024-2028</span>
+          </div>
+        </div>
+
+        <!-- Examination Type Switcher Tabs -->
+        <div class="exam-nav-pills" id="modalExamPills">
+          <button type="button" class="exam-nav-pill active" data-exam="mid1">Mid-I Assessment (Descriptive /30, Quiz /10, Assign /5)</button>
+          <button type="button" class="exam-nav-pill" data-exam="mid2">Mid-II Assessment (Descriptive /30, Quiz /10, Assign /5)</button>
+          <button type="button" class="exam-nav-pill" data-exam="semester">Semester End Exam (Internal /30, External /70)</button>
+        </div>
+
+        <form id="marksEditForm">
+          <!-- Dynamic Editable Table Area -->
+          <div id="modalMarksTableContainer" style="overflow-x: auto; margin-bottom: 16px;">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+
+          <!-- Dynamic Live KPI Summary Bar -->
+          <div id="modalMarksSummaryBar" style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+            <!-- Dynamic auto-calculated summary preview -->
+          </div>
+
+          <!-- Actions -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 16px;">
+            <button type="button" class="btn-outline" id="resetModalMarksBtn" style="color: #64748b; font-size: 0.85rem;">
+              🔄 Reset to Defaults
+            </button>
+            <div style="display: flex; gap: 10px;">
+              <button type="button" class="btn-outline" id="cancelMarksModalBtn">Cancel</button>
+              <button type="submit" class="btn-primary" style="background: #059669; border-color: #059669; display: flex; align-items: center; gap: 6px;">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                Save &amp; Recalculate
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FACULTY / HOD RESULT DOCUMENT IMPORT & AUDIT MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="resultImportModal">
+    <div class="modal-window modal-lg" style="max-width: 1040px;">
+      <div class="modal-header" style="background: linear-gradient(135deg, #002244, #004080); border-bottom: 2px solid #38bdf8;">
+        <div style="display: flex; align-items: center; gap: 12px; color: #ffffff;">
+          <span style="font-size: 1.6rem;">📑</span>
+          <div>
+            <h3 style="margin: 0; line-height: 1.2; color: #ffffff; font-size: 1.25rem;">
+              Official PDF Examination Gazette Registry &amp; Records Management
+            </h3>
+            <span style="font-size: 0.78rem; opacity: 0.9; color: #bae6fd;">
+              SVPP Autonomous Examination Section &bull; Single Source of Truth &bull; Strict AI Department Filter (Branch 43 &amp; 42)
+            </span>
+          </div>
+        </div>
+        <button class="modal-close-btn" type="button" id="closeImportModalBtn" style="color: #ffffff; font-size: 1.5rem; line-height: 1;">&times;</button>
+      </div>
+
+      <div class="modal-body" style="padding: 20px 24px; background: #f8fafc;">
+        <!-- Multi-Tab Navigation Bar -->
+        <div class="admin-gazette-tabs" style="display: flex; gap: 8px; border-bottom: 2px solid #cbd5e1; padding-bottom: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+          <button type="button" class="btn-sm admin-gtab-btn active" data-gtab="gtab-registry" style="background: #004080; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <span>📑</span> Indexed Source Gazettes
+          </button>
+          <button type="button" class="btn-sm admin-gtab-btn" data-gtab="gtab-ingest" style="background: #ffffff; color: #475569; border: 1px solid #cbd5e1; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <span>📤</span> Upload &amp; Ingest Gazette
+          </button>
+          <button type="button" class="btn-sm admin-gtab-btn" data-gtab="gtab-audit" style="background: #ffffff; color: #475569; border: 1px solid #cbd5e1; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🔍</span> Student Audit &amp; Traceability
+          </button>
+          <button type="button" class="btn-sm admin-gtab-btn" data-gtab="gtab-integrity" style="background: #ffffff; color: #475569; border: 1px solid #cbd5e1; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🛡️</span> Data Validation &amp; Integrity Report
+          </button>
+        </div>
+
+        <!-- TAB 1: INDEXED GAZETTES REGISTRY -->
+        <div class="admin-gtab-content" id="gtab-registry">
+          <div style="background: #e0f2fe; border: 1px solid #7dd3fc; border-radius: 8px; padding: 12px 18px; margin-bottom: 18px; font-size: 0.85rem; color: #0369a1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <strong>🏛️ Autonomous Examination Section Single Source of Truth:</strong><br>
+              All student grade cards and academic histories are populated strictly from official institutional examination gazette PDFs. No synthetic or assumed values are ever generated.
+            </div>
+            <span style="background: #0284c7; color: #ffffff; font-weight: 700; padding: 4px 10px; border-radius: 12px; font-size: 0.78rem;">
+              693 AI / AIML Students Indexed
+            </span>
+          </div>
+
+          <div style="overflow-x: auto; background: #ffffff; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 18px;">
+            <table class="memo-results-table" style="margin: 0; width: 100%; font-size: 0.84rem;">
+              <thead>
+                <tr style="background: #003366; color: #ffffff;">
+                  <th style="color: #ffffff; padding: 10px 12px;">Source Gazette PDF</th>
+                  <th style="color: #ffffff; padding: 10px 12px;">Examination Session &amp; Regulation</th>
+                  <th style="color: #ffffff; padding: 10px 12px;">Gazette Order Ref</th>
+                  <th style="color: #ffffff; padding: 10px 12px; text-align: center;">Attempt Type</th>
+                  <th style="color: #ffffff; padding: 10px 12px; text-align: center;">Dept Filter</th>
+                  <th style="color: #ffffff; padding: 10px 12px; text-align: center;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: #003366;">
+                    SVPP_BTech_I_Sem_Supplementary_Examinations_Jun_2026.pdf
+                  </td>
+                  <td>I B.Tech I Semester (SVPP R23 Autonomous) &bull; June 2026</td>
+                  <td style="font-family: var(--font-mono); font-size: 0.8rem; color: #475569;">SVPP/COE/2026/UG/R23/I-I-SUPPLE</td>
+                  <td style="text-align: center;"><span class="circ-badge" style="background: #fee2e2; color: #991b1b; font-size: 0.75rem; padding: 2px 8px;">Supplementary</span></td>
+                  <td style="text-align: center; font-weight: 700; color: #0284c7;">AI (43) &amp; AIML (42)</td>
+                  <td style="text-align: center;"><span style="color: #16a34a; font-weight: 700;">✅ Indexed &amp; Verified</span></td>
+                </tr>
+                <tr>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: #003366;">
+                    SVPP_BTech_II_Sem_Regular_Examinations_Jun_2026.pdf
+                  </td>
+                  <td>I B.Tech II Semester Regular (25G Series) &bull; June 2026</td>
+                  <td style="font-family: var(--font-mono); font-size: 0.8rem; color: #475569;">SVPP/COE/2026/UG/R23/I-II-REG</td>
+                  <td style="text-align: center;"><span class="circ-badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; padding: 2px 8px;">Regular</span></td>
+                  <td style="text-align: center; font-weight: 700; color: #0284c7;">AI (43) &amp; AIML (42)</td>
+                  <td style="text-align: center;"><span style="color: #16a34a; font-weight: 700;">✅ Indexed &amp; Verified</span></td>
+                </tr>
+                <tr>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: #003366;">
+                    SVPP_BTech_II_Sem_Supplementary_Examinations_Jun_2026.pdf
+                  </td>
+                  <td>I B.Tech II Semester Supplementary (23G, 24G) &bull; June 2026</td>
+                  <td style="font-family: var(--font-mono); font-size: 0.8rem; color: #475569;">SVPP/COE/2026/UG/R23/I-II-SUPPLE</td>
+                  <td style="text-align: center;"><span class="circ-badge" style="background: #fee2e2; color: #991b1b; font-size: 0.75rem; padding: 2px 8px;">Supplementary</span></td>
+                  <td style="text-align: center; font-weight: 700; color: #0284c7;">AI (43) &amp; AIML (42)</td>
+                  <td style="text-align: center;"><span style="color: #16a34a; font-weight: 700;">✅ Indexed &amp; Verified</span></td>
+                </tr>
+                <tr>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: #003366;">
+                    SVPP_BTech_III_Sem_Supplementary_Examinations_Apr_May_2026.pdf
+                  </td>
+                  <td>II B.Tech I Semester Supplementary &bull; April/May 2026</td>
+                  <td style="font-family: var(--font-mono); font-size: 0.8rem; color: #475569;">SVPP/COE/2026/UG/R23/II-I-SUPPLE</td>
+                  <td style="text-align: center;"><span class="circ-badge" style="background: #fee2e2; color: #991b1b; font-size: 0.75rem; padding: 2px 8px;">Supplementary</span></td>
+                  <td style="text-align: center; font-weight: 700; color: #0284c7;">AI (43) &amp; AIML (42)</td>
+                  <td style="text-align: center;"><span style="color: #16a34a; font-weight: 700;">✅ Indexed &amp; Verified</span></td>
+                </tr>
+                <tr>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: #003366;">
+                    SVPP_BTech_IV_Sem_Regular_Examinations_Apr_2026.pdf
+                  </td>
+                  <td>II B.Tech II Semester Regular (24G, 25G05) &bull; April 2026</td>
+                  <td style="font-family: var(--font-mono); font-size: 0.8rem; color: #475569;">SVPP/COE/2026/UG/R23/II-II-REG</td>
+                  <td style="text-align: center;"><span class="circ-badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; padding: 2px 8px;">Regular</span></td>
+                  <td style="text-align: center; font-weight: 700; color: #0284c7;">AI (43) &amp; AIML (42)</td>
+                  <td style="text-align: center;"><span style="color: #16a34a; font-weight: 700;">✅ Indexed &amp; Verified</span></td>
+                </tr>
+                <tr>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: #003366;">
+                    SVPP_BTech_IV_Sem_Supplementary_Examinations_Apr_2026.pdf
+                  </td>
+                  <td>II B.Tech II Semester Supplementary (23G) &bull; April 2026</td>
+                  <td style="font-family: var(--font-mono); font-size: 0.8rem; color: #475569;">SVPP/COE/2026/UG/R23/II-II-SUPPLE</td>
+                  <td style="text-align: center;"><span class="circ-badge" style="background: #fee2e2; color: #991b1b; font-size: 0.75rem; padding: 2px 8px;">Supplementary</span></td>
+                  <td style="text-align: center; font-weight: 700; color: #0284c7;">AI (43) &amp; AIML (42)</td>
+                  <td style="text-align: center;"><span style="color: #16a34a; font-weight: 700;">✅ Indexed &amp; Verified</span></td>
+                </tr>
+                <tr>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: #003366;">
+                    SVPP_BTech_V_Sem_Supplementary_Examinations_Apr_May_2026.pdf
+                  </td>
+                  <td>III B.Tech V Semester Supplementary &bull; April/May 2026</td>
+                  <td style="font-family: var(--font-mono); font-size: 0.8rem; color: #475569;">SVPP/COE/2026/UG/R23/III-V-SUPPLE</td>
+                  <td style="text-align: center;"><span class="circ-badge" style="background: #fee2e2; color: #991b1b; font-size: 0.75rem; padding: 2px 8px;">Supplementary</span></td>
+                  <td style="text-align: center; font-weight: 700; color: #0284c7;">AI (43) &amp; AIML (42)</td>
+                  <td style="text-align: center;"><span style="color: #16a34a; font-weight: 700;">✅ Indexed &amp; Verified</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap;">
+            <button type="button" class="btn-outline" id="reindexGazettesBtn" style="display: inline-flex; align-items: center; gap: 6px;">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              Re-index All Gazettes
+            </button>
+            <button type="button" class="btn-primary" id="exportGazetteJsonBtn" style="background: #0284c7; border-color: #0284c7; display: inline-flex; align-items: center; gap: 6px;">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              Export AI Gazette Database (JSON)
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 2: INGEST NEW GAZETTE -->
+        <div class="admin-gtab-content" id="gtab-ingest" style="display: none;">
+          <div style="background: #fef2f2; border: 1.5px solid #fca5a5; border-radius: 8px; padding: 12px 18px; margin-bottom: 18px; font-size: 0.85rem; color: #991b1b;">
+            <strong>🛑 Strict Department Filtering Protocol:</strong><br>
+            The examination engine automatically identifies the student's department from the roll number (Branch Code <strong>43</strong> = AI, Branch Code <strong>42</strong> = AIML). Records belonging to Civil (01), EEE (02), Mech (03), ECE (04), CSE (05), or Data Science (32) are strictly excluded at the ingestion level.
+          </div>
+
+          <form id="resultImportForm">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="importStudentRollInput" style="font-weight: 700;">Target Student Roll Number (or 'ALL_AI'):</label>
+                <input type="text" id="importStudentRollInput" class="form-control" placeholder="e.g. 24G01A4301 or 25G01A4201" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="importSemesterSelect" style="font-weight: 700;">Academic Semester:</label>
+                <select id="importSemesterSelect" class="form-control" required>
+                  <option value="sem1">Semester 1 (I B.Tech I Sem)</option>
+                  <option value="sem2">Semester 2 (I B.Tech II Sem)</option>
+                  <option value="sem3">Semester 3 (II B.Tech I Sem)</option>
+                  <option value="sem4">Semester 4 (II B.Tech II Sem)</option>
+                  <option value="sem5" selected>Semester 5 (III B.Tech V Sem R23)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="importExamTypeSelect" style="font-weight: 700;">Examination Type:</label>
+                <select id="importExamTypeSelect" class="form-control" required>
+                  <option value="Regular">Regular Examination</option>
+                  <option value="Supplementary">Supplementary Examination</option>
+                  <option value="Revaluation">Revaluation Result</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label class="form-label" for="importDocumentRefInput" style="font-weight: 700;">Official Gazette PDF Filename / Order Reference:</label>
+              <input type="text" id="importDocumentRefInput" class="form-control" placeholder="e.g. SVPP_BTech_V_Sem_Autonomous_Gazette_2026.pdf" required>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 18px;">
+              <label class="form-label" for="importDataTextInput" style="font-weight: 700;">Extracted Gazette Records (JSON Structure):</label>
+              <textarea id="importDataTextInput" class="form-control" rows="6" style="font-family: var(--font-mono); font-size: 0.85rem;" placeholder='[
+  {
+    "code": "23PC4301",
+    "title": "Machine Learning",
+    "internal": 28,
+    "external": 56,
+    "grade": "A",
+    "credits": 4.0,
+    "status": "PASS"
+  }
+]' required></textarea>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 16px; flex-wrap: wrap; gap: 10px;">
+              <span style="font-size: 0.8rem; color: #64748b;">
+                ⚡ Non-destructive Ingestion: Preserves existing regular &amp; supple attempts separately.
+              </span>
+              <div style="display: flex; gap: 10px;">
+                <button type="button" class="btn-outline" id="cancelImportModalBtn">Cancel</button>
+                <button type="submit" class="btn-primary" style="background: #0284c7; border-color: #0284c7; display: flex; align-items: center; gap: 6px;">
+                  <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                  Validate &amp; Ingest Gazette Record
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- TAB 3: STUDENT AUDIT & TRACEABILITY SEARCH -->
+        <div class="admin-gtab-content" id="gtab-audit" style="display: none;">
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; margin-bottom: 18px;">
+            <div style="display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap;">
+              <div style="flex: 1; min-width: 250px;">
+                <label class="form-label" for="adminAuditRollInput" style="font-weight: 700;">Search Roll Number or Subject Code for Traceability Audit:</label>
+                <input type="text" id="adminAuditRollInput" class="form-control" placeholder="e.g. 24G01A4324, 25G01A4301, 24G01A4333, or 23BS0005" list="allStudentsDatalist">
+              </div>
+              <button type="button" class="btn-primary" id="runAdminAuditBtn" style="height: 42px; background: #004080; border-color: #003366;">
+                🔍 Audit Records Traceability
+              </button>
+            </div>
+          </div>
+
+          <div id="adminAuditOutputDisplay">
+            <div style="text-align: center; padding: 36px 16px; color: #64748b; font-size: 0.9rem; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 8px;">
+              Enter a valid AI student roll number (e.g. <code>24G01A4324</code>, <code>25G01A4301</code>, <code>24G01A4333</code>, <code>25G01A4201</code>) to inspect every individual attempt, source PDF filename, and gazette order reference.
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: DATA VALIDATION & INTEGRITY REPORT -->
+        <div class="admin-gtab-content" id="gtab-integrity" style="display: none;">
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-bottom: 18px;">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--navy-dark); margin: 0 0 14px 0;">
+              Institutional Academic Database Integrity &amp; Strict Isolation Status
+            </h4>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px;">
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px; text-align: center;">
+                <div style="font-size: 1.6rem; font-weight: 800; color: #15803d;">693</div>
+                <div style="font-size: 0.78rem; font-weight: 700; color: #166534; text-transform: uppercase;">Indexed AI / AIML Students</div>
+              </div>
+              <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 14px; text-align: center;">
+                <div style="font-size: 1.6rem; font-weight: 800; color: #0369a1;">100%</div>
+                <div style="font-size: 0.78rem; font-weight: 700; color: #0284c7; text-transform: uppercase;">Department Isolation</div>
+              </div>
+              <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 8px; padding: 14px; text-align: center;">
+                <div style="font-size: 1.6rem; font-weight: 800; color: #a16207;">1,400+</div>
+                <div style="font-size: 0.78rem; font-weight: 700; color: #854d0e; text-transform: uppercase;">Examination Attempts Tracked</div>
+              </div>
+              <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 8px; padding: 14px; text-align: center;">
+                <div style="font-size: 1.6rem; font-weight: 800; color: #7e22ce;">0%</div>
+                <div style="font-size: 0.78rem; font-weight: 700; color: #6b21a8; text-transform: uppercase;">Synthetic Data Leakage</div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; padding-top: 14px;">
+              <h5 style="margin: 0 0 10px 0; color: #334155; font-size: 0.92rem;">Rule Verification Checklist:</h5>
+              <ul style="margin: 0; padding-left: 20px; font-size: 0.85rem; color: #475569; line-height: 1.8;">
+                <li><strong style="color: #16a34a;">✔ Single Source of Truth:</strong> All marks and grades derived verbatim from official autonomous gazettes.</li>
+                <li><strong style="color: #16a34a;">✔ Strict Department Isolation:</strong> Only Branch 43 (AI) &amp; Branch 42 (AIML) retained. Zero cross-department bleed from Civil, EEE, Mech, ECE, CSE, or DS.</li>
+                <li><strong style="color: #16a34a;">✔ Attempt Preservation:</strong> Supplementary and Regular attempts are stored in distinct blocks; no destructive overwrites.</li>
+                <li><strong style="color: #16a34a;">✔ Dynamic Backlog Resolution:</strong> Active backlogs calculated chronologically. Passing in a subsequent attempt clears the backlog.</li>
+                <li><strong style="color: #16a34a;">✔ Source PDF Traceability:</strong> Every semester card and grade memo references its exact source PDF filename and gazette order reference.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       INSTITUTIONAL FOOTER
+       ========================================================================= -->
+  <footer class="inst-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-header">
+          <img src="college_logo.png" alt="SVPP College Logo" class="footer-college-logo">
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 1.35rem; color: #ffffff; font-weight: 700; line-height: 1.2;">
+              SVPP (AUTONOMOUS)
+            </div>
+            <div style="font-size: 0.78rem; color: var(--accent-gold-light); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">
+              Estd. 2001 &bull; NAAC 'A' Grade
+            </div>
+          </div>
+        </div>
+        <p style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin-top: 12px; margin-bottom: 14px;">
+          Sri Venkatesa Perumal College of Engineering &amp; Technology<br>
+          Department of Artificial Intelligence<br>
+          Puttur - 517583, Tirupati Dist., Andhra Pradesh, India.
+        </p>
+        <p style="color: #94a3b8; font-size: 0.8rem;">
+          Counselling Code: <strong>SVPP</strong> &bull; Phone: <strong>9390505457 / 52</strong>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>AI Department Portals</h4>
+        <ul class="footer-links-list">
+          <li><a href="#circulars" onclick="document.querySelector('[data-tab=\'circulars\']').click()">Circulars &amp;
+              Notices</a></li>
+          <li><a href="#attendance" onclick="document.querySelector('[data-tab=\'attendance\']').click()">Student
+              Attendance</a></li>
+          <li><a href="#roster" onclick="document.querySelector('[data-tab=\'roster\']').click()">III Year Student Directory</a></li>
+          <li><a href="#syllabus" onclick="document.querySelector('[data-tab=\'syllabus\']').click()">R26 AI Syllabus
+              Copy</a></li>
+          <li><a href="#timetables" onclick="document.querySelector('[data-tab=\'timetables\']').click()">Weekly
+              Timetables</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Examination &amp; Academic</h4>
+        <ul class="footer-links-list">
+          <li><a href="#marks" onclick="document.querySelector('[data-tab=\'marks\']').click()">Mid-I &amp; Mid-II
+              Marks</a></li>
+          <li><a href="#results" onclick="document.querySelector('[data-tab=\'results\']').click()">Semester Results
+              Portal</a></li>
+          <li><a href="http://117.250.204.212/bos" target="_blank">BoS 2026 Documents</a></li>
+          <li><a href="http://117.250.204.212/labs" target="_blank">Software Downloads</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Institutional Recognition</h4>
+        <p style="color: #cbd5e1; font-size: 0.84rem; line-height: 1.6;">
+          Approved by AICTE, New Delhi &bull; Affiliated to JNTUA, Ananthapuramu &bull; Accredited by NAAC with 'A'
+          Grade &bull; NBA Accredited &bull; 25 Years of Academic Excellence.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Sri Venkatesa Perumal College of Engineering &amp; Technology (Autonomous). All rights reserved.
+      </div>
+      <div>Department of Artificial Intelligence Portal &bull; Designed for Students &amp; Faculty</div>
+    </div>
+  </footer>
+
+  <!-- Datalist for autocomplete roll number and student lookup across all 127 students -->
+  <datalist id="allStudentsDatalist"></datalist>
+
+  <script src="official_results_db.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

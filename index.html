@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVPP Homepage &bull; Sri Venkatesa Perumal College of Engineering &amp; Technology</title>
+  <meta name="description"
+    content="Sri Venkatesa Perumal College of Engineering & Technology (SVPP Autonomous), Puttur. Department of Artificial Intelligence, R26 Syllabus, BoS 2026, Softwares, ExamPortal, Attendance & Results.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="college_logo.png">
+  <link rel="apple-touch-icon" href="college_logo.png">
+  <style>
+    /* College Homepage Specific Styling */
+    .home-hero-poster-section {
+      max-width: 1380px;
+      margin: 28px auto;
+      padding: 0 20px;
+    }
+
+    .ai-spotlight-banner {
+      background: linear-gradient(135deg, #002244 0%, #003366 50%, #006699 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 2px solid #38bdf8;
+      box-shadow: 0 10px 30px rgba(0, 51, 102, 0.25);
+      padding: 32px;
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .ai-spotlight-banner {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+    }
+
+    .ai-badge-new {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.76rem;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .ai-spotlight-banner h2 {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .ai-spotlight-header-flex {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .ai-spotlight-logo-wrap {
+      width: 72px;
+      height: 72px;
+      min-width: 72px;
+      background: radial-gradient(circle at center, #001e3d 0%, #000c1e 100%);
+      border: 2px solid #38bdf8;
+      border-radius: 16px;
+      padding: 4px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ai-spotlight-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .ai-spotlight-banner p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .ai-features-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .ai-feature-pill {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .ai-btn-launch {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #002244;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 12px 28px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+      transition: var(--transition-normal);
+    }
+
+    .ai-btn-launch:hover {
+      background: #ffffff;
+      color: var(--primary-navy);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    }
+
+    /* College Achievement Poster Cards */
+    .section-heading-center {
+      text-align: center;
+      margin: 36px 0 24px;
+    }
+
+    .section-heading-center h2 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--navy-dark);
+      font-weight: 700;
+    }
+
+    .section-heading-center p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .gallery-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: #cbd5e1;
+    }
+
+    .gallery-card-img-wrap {
+      width: 100%;
+      height: 240px;
+      background: #f1f5f9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-card:hover .gallery-card-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .gallery-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-card-tag {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #0284c7;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .gallery-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 8px;
+    }
+
+    .gallery-card-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       INSTITUTIONAL HEADER
+       ========================================================================= -->
+  <header class="inst-header">
+    <div class="inst-topbar">
+      <div class="inst-topbar-left">
+        <span><span class="topbar-badge">AUTONOMOUS</span> Sri Venkatesa Perumal College of Engineering &amp;
+          Technology</span>
+        <span><strong>Counselling Code:</strong> SVPP</span>
+        <span><strong>Call:</strong> 9390505457 / 9390505452</span>
+      </div>
+      <div class="inst-topbar-right">
+        <span style="font-size: 0.78rem; color: #cbd5e1;">Puttur - 517583, Tirupati Dist., A.P.</span>
+      </div>
+    </div>
+
+    <!-- Official College Banner Area -->
+    <div class="inst-banner-container">
+      <div class="vector-banner" id="vectorBanner">
+        <div class="college-crest-group">
+          <div class="college-logo-wrap">
+            <img src="college_logo.png"
+              alt="Sri Venkatesa Perumal College of Engineering &amp; Technology (SVPP Autonomous) Official Emblem"
+              class="college-crest-img">
+          </div>
+          <div class="college-title-block">
+            <div class="college-code-badge">SVPP (AUTONOMOUS)</div>
+            <div class="college-name-full">SRI VENKATESA PERUMAL COLLEGE OF ENGINEERING &amp; TECHNOLOGY | PUTTUR</div>
+            <div class="college-affil">
+              COUNSELLING CODE: SVPP <span>&bull;</span> CALL: 9390505457/52 <span>&bull;</span> NAAC 'A' &bull; NBA
+              ACCREDITED
+            </div>
+          </div>
+        </div>
+        <div class="college-silver-badge">
+          <div class="silver-number">25</div>
+          <div class="silver-text">Years of<br>Academic<br>Excellence</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar (Updated with Prominent Department of AI Link) -->
+    <nav class="college-nav-bar" aria-label="College Navigation Links">
+      <a href="http://117.250.204.212/bos/R26-syllabus" target="_blank" class="college-nav-btn">R26 Syllabus</a>
+      <a href="http://117.250.204.212/bos" target="_blank" class="college-nav-btn">BoS 2026</a>
+      <a href="http://117.250.204.212/labs" target="_blank" class="college-nav-btn">Softwares</a>
+      <a href="http://117.250.204.212/one" target="_blank" class="college-nav-btn">Eazy Compiler</a>
+
+      <!-- NEW: DEPARTMENT OF ARTIFICIAL INTELLIGENCE -->
+      <a href="ai_department.html" class="college-nav-btn btn-ai-highlight">
+        <img src="ai_department_logo.png" alt="AI Dept Emblem" class="nav-ai-logo-icon">
+        <span class="ai-pulse-dot"></span>
+        Dept of Artificial Intelligence
+      </a>
+
+      <a href="ai_department.html#results" class="college-nav-btn btn-orange">ExamPortal &amp; Results</a>
+    </nav>
+  </header>
+
+  <!-- News Ticker -->
+  <div class="news-ticker-wrap">
+    <div class="ticker-label">Announcements</div>
+    <div class="ticker-content">
+      <div class="ticker-marquee">
+        🚀 <strong>New Department Portal Launched:</strong> Department of Artificial Intelligence Portal is now live
+        with real-time Student &amp; Faculty Attendance, R26 Syllabus, Timetables, Mid Marks, and Semester Results
+        &bull; 📢 <strong>Mid-I Exams:</strong> Commencing from 14th Oct 2026 &bull; 🏆 Congratulations to SVPP AI
+        Students on winning National Level Research Award!
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MAIN CONTENT: AI DEPARTMENT SPOTLIGHT & COLLEGE SHOWCASE
+       ========================================================================= -->
+  <main class="home-hero-poster-section">
+
+    <!-- Department of AI Feature Spotlight Banner -->
+    <section class="ai-spotlight-banner">
+      <div>
+        <div class="ai-spotlight-header-flex">
+          <div class="ai-spotlight-logo-wrap">
+            <img src="ai_department_logo.png" alt="Department of AI Official Emblem" class="ai-spotlight-logo-img">
+          </div>
+          <div>
+            <span class="ai-badge-new">✨ Featured Department Portal</span>
+            <h2 style="margin-bottom:0;">Department of Artificial Intelligence</h2>
+          </div>
+        </div>
+        <p>
+          Access all student and faculty services in one centralized portal: view real-time lecture attendance %,
+          download R26 autonomous syllabus copies, inspect weekly class &amp; exam timetables, review Mid-I/Mid-II
+          internal marks, and generate official semester result memos.
+        </p>
+
+        <div class="ai-features-pill-row">
+          <span class="ai-feature-pill">👥 III Year V Sem Roster (127 Students)</span>
+          <span class="ai-feature-pill">📢 Circulars &amp; Notices</span>
+          <span class="ai-feature-pill">📊 Attendance System</span>
+          <span class="ai-feature-pill">📚 R26 Syllabus Copy</span>
+          <span class="ai-feature-pill">🗓️ Class &amp; Faculty Timetables</span>
+          <span class="ai-feature-pill">📝 Mid Examination Marks</span>
+          <span class="ai-feature-pill">🎓 Autonomous Result Memos</span>
+        </div>
+
+        <a href="ai_department.html" class="ai-btn-launch">
+          Enter Department of AI Portal &rarr;
+        </a>
+      </div>
+
+      <div
+        style="border-radius: 16px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.4); border: 2px solid rgba(56,189,248,0.45); background: radial-gradient(circle at center, #002244 0%, #001122 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center;">
+        <img src="ai_department_logo.png" alt="B.Tech Artificial Intelligence Official Emblem"
+          style="max-height: 220px; width: auto; max-width: 100%; object-fit: contain; display: block; filter: drop-shadow(0 10px 25px rgba(56,189,248,0.35));">
+        <div
+          style="margin-top: 14px; font-weight: 800; font-size: 0.95rem; color: #7dd3fc; letter-spacing: 0.05em; text-transform: uppercase;">
+          B.Tech Artificial Intelligence</div>
+        <div style="font-size: 0.78rem; color: #cbd5e1; font-weight: 600; letter-spacing: 0.06em;">LEARN &bull; BUILD
+          &bull; INNOVATE</div>
+      </div>
+    </section>
+
+    <!-- Quick Access Columns for AI Department -->
+    <div class="section-heading-center">
+      <h2>Artificial Intelligence Department Services</h2>
+      <p>Instant access for B.Tech AI students, teachers, and parents</p>
+    </div>
+
+    <div class="dashboard-grid">
+      <a href="ai_department.html#circulars" style="text-decoration: none; color: inherit;">
+        <div class="feature-portal-card">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-rose">📢</div>
+            <span class="circ-badge badge-urgent">Updated Daily</span>
+          </div>
+          <h3>Circulars &amp; Notices</h3>
+          <p>Academic circulars, holiday notifications, exam fee deadlines, and seminar announcements.</p>
+          <div class="card-action-link">View Circulars &rarr;</div>
+        </div>
+      </a>
+
+      <a href="ai_department.html#attendance" style="text-decoration: none; color: inherit;">
+        <div class="feature-portal-card">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-emerald">📊</div>
+            <span class="circ-badge badge-academic">Student &bull; Teacher</span>
+          </div>
+          <h3>Attendance Portal</h3>
+          <p>Student attendance tracker with subject percentages and teacher daily attendance marker.</p>
+          <div class="card-action-link">Track Attendance &rarr;</div>
+        </div>
+      </a>
+
+      <a href="ai_department.html#syllabus" style="text-decoration: none; color: inherit;">
+        <div class="feature-portal-card">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-gold">📚</div>
+            <span class="circ-badge" style="background:#fef3c7; color:#b45309;">Autonomous</span>
+          </div>
+          <h3>R26 Syllabus Copy</h3>
+          <p>Complete B.Tech Artificial Intelligence curriculum, course codes, unit contents, and textbooks.</p>
+          <div class="card-action-link">Download Syllabus &rarr;</div>
+        </div>
+      </a>
+
+      <a href="ai_department.html#timetables" style="text-decoration: none; color: inherit;">
+        <div class="feature-portal-card">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-blue">🗓️</div>
+            <span class="circ-badge badge-academic">Odd Sem 2026</span>
+          </div>
+          <h3>Time Tables</h3>
+          <p>Weekly class schedule (Periods 1 to 7), lab batch sessions, and faculty workload sheets.</p>
+          <div class="card-action-link">View Schedule &rarr;</div>
+        </div>
+      </a>
+
+      <a href="ai_department.html#marks" style="text-decoration: none; color: inherit;">
+        <div class="feature-portal-card">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-amber">📝</div>
+            <span class="circ-badge badge-exam">Internal 30M</span>
+          </div>
+          <h3>Mid Marks &amp; Internals</h3>
+          <p>Check Mid-I, Mid-II, online objective tests, assignments, and scaled internal scores.</p>
+          <div class="card-action-link">Lookup Marks &rarr;</div>
+        </div>
+      </a>
+
+      <a href="ai_department.html#results" style="text-decoration: none; color: inherit;">
+        <div class="feature-portal-card">
+          <div class="card-top-icon-row">
+            <div class="portal-icon-box icon-purple">🎓</div>
+            <span class="circ-badge" style="background:#e0f2fe; color:#0369a1;">Certified Memo</span>
+          </div>
+          <h3>Semester Results Memo</h3>
+          <p>Enter hall ticket number to view SGPA, CGPA, grades, credits, and print verified grade sheets.</p>
+          <div class="card-action-link">View Results Memo &rarr;</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- College Posters & Announcements Gallery (Matching institutional homepage) -->
+    <div class="section-heading-center">
+      <h2>SVPP Campus &amp; Student Achievements</h2>
+      <p>Highlights from Sri Venkatesa Perumal College of Engineering &amp; Technology</p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Card 1: Student Achievement -->
+      <div class="gallery-card">
+        <div class="gallery-card-img-wrap">
+          <img src="image1.jpeg" onerror="this.onerror=null; this.src='http://117.250.204.212/image1.jpeg';"
+            alt="SVPP Student Achievement">
+        </div>
+        <div class="gallery-card-body">
+          <span class="gallery-card-tag">Student Excellence</span>
+          <h3 class="gallery-card-title">Big Congratulations to OUR SVPP Student T. Pujasree</h3>
+          <p class="gallery-card-desc">Academic excellence award and placement milestone achieved under autonomous
+            B.Tech program.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Tata Electronics & Semiconductor -->
+      <div class="gallery-card">
+        <div class="gallery-card-img-wrap">
+          <img src="image2.jpeg" onerror="this.onerror=null; this.src='http://117.250.204.212/image2.jpeg';"
+            alt="Tata Electronics Semiconductor">
+        </div>
+        <div class="gallery-card-body">
+          <span class="gallery-card-tag">Industry Partnership</span>
+          <h3 class="gallery-card-title">India's Semiconductor Ambitions &bull; Tata Electronics</h3>
+          <p class="gallery-card-desc">Industry tie-ups and hands-on skill training in semiconductor design and advanced
+            VLSI/AI computing.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: AI Innovation Project -->
+      <div class="gallery-card">
+        <div class="gallery-card-img-wrap">
+          <img src="ai_event.jpg" onerror="this.onerror=null; this.src='ai_department_logo.png';"
+            alt="AI Research Award">
+        </div>
+        <div class="gallery-card-body">
+          <span class="gallery-card-tag">Research &amp; Innovation</span>
+          <h3 class="gallery-card-title">New Event Name</h3>
+          <p class="gallery-card-desc">description of the new event.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="inst-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-header">
+          <img src="college_logo.png" alt="SVPP College Logo" class="footer-college-logo">
+          <div>
+            <div
+              style="font-family: var(--font-serif); font-size: 1.35rem; color: #ffffff; font-weight: 700; line-height: 1.2;">
+              SVPP (AUTONOMOUS)
+            </div>
+            <div
+              style="font-size: 0.78rem; color: var(--accent-gold-light); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">
+              Estd. 2001 &bull; NAAC 'A' Grade
+            </div>
+          </div>
+        </div>
+        <p style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px;">
+          Sri Venkatesa Perumal College of Engineering &amp; Technology<br>
+          Puttur - 517583, Tirupati Dist., Andhra Pradesh.<br>
+          Counselling Code: <strong>SVPP</strong> &bull; Phone: <strong>9390505457 / 52</strong>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Department of AI</h4>
+        <ul class="footer-links-list">
+          <li><a href="ai_department.html#circulars">Circulars &amp; Notices</a></li>
+          <li><a href="ai_department.html#attendance">Attendance System</a></li>
+          <li><a href="ai_department.html#syllabus">R26 AI Syllabus Copy</a></li>
+          <li><a href="ai_department.html#timetables">Time Tables</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Autonomous Portals</h4>
+        <ul class="footer-links-list">
+          <li><a href="ai_department.html#marks">Mid Marks</a></li>
+          <li><a href="ai_department.html#results">Semester Results Memo</a></li>
+          <li><a href="http://117.250.204.212/bos" target="_blank">BoS 2026</a></li>
+          <li><a href="http://117.250.204.212/labs" target="_blank">Softwares</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Accreditations</h4>
+        <p style="color: #cbd5e1; font-size: 0.84rem; line-height: 1.6;">
+          Approved by AICTE, New Delhi &bull; Affiliated to JNTUA, Ananthapuramu &bull; Accredited by NAAC with 'A'
+          Grade &bull; NBA Accredited &bull; 25 Years of Academic Excellence.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Sri Venkatesa Perumal College of Engineering &amp; Technology (Autonomous). All rights reserved.
+      </div>
+      <div>Official College Web Portal &bull; SVPP Autonomous</div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
